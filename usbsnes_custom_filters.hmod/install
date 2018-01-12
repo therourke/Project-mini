@@ -1,0 +1,2 @@
+chmod +x "$rootfs/usr/bin/canoe-custom-filters"
+return 1
