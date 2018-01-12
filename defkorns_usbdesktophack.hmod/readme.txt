@@ -9,7 +9,6 @@ DanTheMan827 - custom_boxart.hmod
 Special Thanks to bslenul and KMFDManic
 
  This allows you to change the box art for the "original" games.
-It creates a folder at /var/lib/hakchi/boxart
 
 Includes:
 
