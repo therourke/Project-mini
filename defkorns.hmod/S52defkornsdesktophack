@@ -7,13 +7,16 @@
 source "/etc/preinit"
 script_init
 ls  -l "$squashfs$gamepath" | grep 'CLV-P-' | awk '{ print $9 }' | while read gamecode; do
-  if [ -f "$rootfs/boxart/$gamecode.png" ]; then
-    mount -o bind "$rootfs/boxart/$gamecode.png" "$squashfs$gamepath/${gamecode}/${gamecode}.png"
+  if [ -f "/media/hakchi/boxart/$gamecode.png" ]; then
+    mount -o bind "/media/hakchi/boxart/$gamecode.png" "$squashfs$gamepath/${gamecode}/${gamecode}.png"
   fi
-  if [ -f "$rootfs/boxart/${gamecode}_small.png" ]; then
-    mount -o bind "$rootfs/boxart/${gamecode}_small.png" "$squashfs$gamepath/${gamecode}/${gamecode}_small.png"
+  if [ -f "/media/hakchi/boxart/${gamecode}_small.png" ]; then
+    mount -o bind "/media/hakchi/boxart/${gamecode}_small.png" "$squashfs$gamepath/${gamecode}/${gamecode}_small.png"
   fi
-  if [ -f "$rootfs/boxart/$gamecode.desktop" ]; then
-    cp -r "$rootfs/boxart/$gamecode.desktop" "$rootfs$gamepath/${gamecode}/${gamecode}.desktop"
+  if [ -f "/media/hakchi/boxart/$gamecode.desktop" ]; then
+    cp -r "/media/hakchi/boxart/$gamecode.desktop" "/media/hakchi/${gamecode}/${gamecode}.desktop"
   fi
 done < /dev/stdin
+
+
+
